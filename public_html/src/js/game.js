@@ -8,7 +8,7 @@ function Tile(title) {
 
 Tile.prototype.flip = function() {
   this.flipped = !this.flipped;
-};
+}
 
 
 
@@ -48,7 +48,7 @@ function Game(tileNames) {
         this.message = Game.MESSAGE_MISS;
       }
     }
-  };
+  }
 }
 
 Game.MESSAGE_CLICK = 'Click on a tile.';
