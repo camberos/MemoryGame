@@ -8,44 +8,47 @@
   <script src="../bower_components/angular/angular.min.js" type="text/javascript"></script>
   <script src="js/app.js"></script>
   <script src="js/game.js"></script>
-  <script src="js/menu.js"></script>
+<!--   <script src="js/menu.js"></script> -->
   
   <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
   <link href="../bower_components/animate.css/animate.min.css" rel="stylesheet" type="text/css"/>
   <link rel="stylesheet" href="css/app.css">
- 
-  
-  
   
 </head>
 
 <body ng-controller="GameCtrl">
   
-  <div ng-show="false">
-    <div class="pairsLeft">Pairs left to match: {{game.unmatchedPairs}}</div>
-    <div class="matchingPair">Matching: {{game.firstPick.title}}</div>
+  <div ng-show="true">
+    <div class="row">
+        <div class="pairsLeft">Pairs left to match: {{game.unmatchedPairs}}</div>
+        <div class="matchingPair">Matching: {{game.firstPick.title}}</div>
+    </div>
+    <div class="row">
+      <table>
+        <tr ng-repeat="row in game.grid">
+          <td ng-repeat="tile in row" ng-click="game.flipTile(tile)">
 
-    <table>
-      <tr ng-repeat="row in game.grid">
-        <td ng-repeat="tile in row" ng-click="game.flipTile(tile)">
-
-          <!-- this entire block can be replaced with our custom component mgCard:
-            <mg-card tile="tile"></mg-card>
-          -->
-          <div class="container">
-            <div class="card" ng-class="{flipped: tile.flipped}">
-                <img class="front" ng-src="img/back.png">
-                <img class="back" ng-src="img/{{tile.title}}.png">
+            <!-- this entire block can be replaced with our custom component mgCard:
+              <mg-card tile="tile"></mg-card>
+            -->
+            <div class="container">
+              <div class="card" ng-class="{flipped: tile.flipped}">
+                  <img class="front" ng-src="img/back.png">
+                  <img class="back" ng-src="img/{{tile.title}}.png">
+              </div>
             </div>
-          </div>
-        </td>
-      </tr>
-    </table>
-    <div class="message">{{game.message}}</div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="row">
+      <div class="message">{{game.message}}</div>
+    </div>
   </div>
+  
   <div class="container-fluid">
     
-            <img class="img-responsive" src="img/intro.png" alt=""/>
+          <!--   <img class="img-responsive" src="img/intro.png" alt=""/> -->
        
   </div>
     
