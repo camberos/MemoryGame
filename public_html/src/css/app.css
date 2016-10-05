@@ -99,3 +99,8 @@ div {
   top: 50%;
   transform: translateY(-50%)
 }
+
+.row {
+      margin-right: 0px;
+    margin-left: 0px;
+}
